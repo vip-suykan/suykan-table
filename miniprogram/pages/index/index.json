@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "table": "/components/table/table"
+  },
+  "navigationBarTitleText": "表格测试"
+}

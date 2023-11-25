@@ -1,0 +1,20 @@
+<view style="padding: 32rpx;">
+  <view class="box">
+    <view class="title">基础使用方法：</view>
+    <table width="1500rpx" height="900rpx" columns="{{columns1}}" dataSource="{{dataSource}}" bind:request="onRequest"></table>
+  </view>
+  <view class="box">
+    <view class="title">指定列增加背景色：</view>
+    <table width="1500rpx" height="900rpx" columns="{{columns2}}" dataSource="{{dataSource}}" bind:request="onRequest"></table>
+  </view>
+
+  <view class="box">
+    <view class="title">斑马纹：</view>
+    <table width="1500rpx" height="900rpx" columns="{{columns3}}" dataSource="{{dataSource}}" bind:request="onRequest" zebra="{{zebra}}"></table>
+  </view>
+
+  <view class="box">
+    <view class="title">固定列:(目前仅支持一个固定列)</view>
+    <table width="1500rpx" height="900rpx" columns="{{fixed}}" dataSource="{{dataSource}}" bind:request="onRequest"></table>
+  </view>
+</view>

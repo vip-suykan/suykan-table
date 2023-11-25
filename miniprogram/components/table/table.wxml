@@ -1,0 +1,23 @@
+<view class="table-main">
+  <view class="table-body">
+    <view class="table" style="{{width&&'width:'+width+';'}}">
+      <view class="thead">
+        <view class="th" wx:for="{{columns}}" style="{{item.fixed?('flex:0 0'+item.width+';position:sticky;left:0;background:#eee'):('flex:0 0 '+item.width+';')}} {{item.bgColor&&('background:'+item.bgColor)}}">{{item.title}}
+          <text class="subtitle" wx:if="{{item.subTitle}}">{{item.subTitle}}</text>
+        </view>
+      </view>
+      <view class="tbody" style="{{height&&'max-height:'+height+';'}}">
+        <view class="{{zebra?'tr-zebra':'tr'}}" wx:for="{{dataSource}}" wx:for-index="Bigindex">
+          <view bindtap="tapData" data-item="{{item}}" data-key="{{column}}" class="td {{column.link&&'link'}}" wx:for="{{columns}}" wx:for-item="column" style="{{column.fixed?('flex:0 0'+column.width+';position:sticky;left:0;background:#fff'):('flex:0 0 '+column.width+';')}} {{column.customized&&(item[column.dataIndex]>0?'color: #42b983;':'color: #E80000;')}}  {{column.bgColor&&('background:'+column.bgColor+';')}}">
+            <image wx:if="{{column.type==='image'}}" style="width: 60%;" src="{{item[column.dataIndex]}}" mode="widthFix"></image>
+            <text wx:elif="{{column.type==='number'}}" style="{{!item[column.dataIndex]&&'color:#333333;'}}">{{item[column.dataIndex]?item[column.dataIndex]:0}}</text>
+            <text wx:else style="{{!item[column.dataIndex]&&'color:#333333;'}}">{{item[column.dataIndex]?item[column.dataIndex]:'-'}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{showLoad}}">
+    <load-more hideShow="{{dataSource.length===total}}" bind:search="onSearch"></load-more>
+  </view>
+</view>

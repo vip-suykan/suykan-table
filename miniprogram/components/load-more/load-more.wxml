@@ -1,0 +1,10 @@
+<view style="{{bottom&&'margin-bottom:'+bottom+';'}}">
+    <view wx:if="{{!hideShow}}">
+        <view class="load-more" wx:if="{{!finish}}" bindtap="search">
+            {{text}} <image src="/assets/down-arrow.png"></image>
+        </view>
+        <view class="load-more all" wx:if="{{finish}}">
+            {{finishText}}
+        </view>
+    </view>
+</view>

@@ -1,0 +1,25 @@
+.load-more {
+  margin-top: 30rpx;
+  margin-bottom: 0rpx;
+  text-align: center;
+  color: #3E73FE;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.load-more>image {
+  width: 34rpx;
+  height: 34rpx;
+  margin-left: 10rpx;
+}
+
+.icon {
+  display: inline-block;
+  transform: scaleX(-1) rotate(90deg);
+}
+
+.all {
+  color: #afaeae;
+}
